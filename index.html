@@ -9,7 +9,6 @@
 <title>مغاسل لمى الذكية</title>
 
 <link rel="icon" href="logo.png.png">
-<link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#1677ea">
 
 <style>
@@ -47,9 +46,7 @@ border-radius:20px;
 box-shadow:0 10px 25px rgba(0,0,0,.1);
 }
 
-input,
-select,
-textarea{
+input,select,textarea{
 width:100%;
 padding:14px;
 margin:10px 0;
@@ -93,113 +90,52 @@ border-radius:15px;
 
 <div class="header">
 
-<img
-src="logo.png.png"
-class="logo"
-
->
+<img src="logo.png.png" class="logo">
 
 <div class="subtitle">
-
 استلام • غسيل • توصيل
-
 </div>
 
 </div>
 
 <div class="box">
 
-<input
-type="text"
-name="name"
-placeholder="الاسم"
-required
+<input type="text" name="name" placeholder="الاسم" required>
 
->
+<input type="tel" name="phone" placeholder="رقم الجوال" required>
 
-<input
-type="tel"
-name="phone"
-placeholder="رقم الجوال"
-required
+<input type="text" name="address" placeholder="العنوان" required>
 
->
+<input type="text" name="unit" placeholder="رقم الشقة / رقم الاشتراك" required>
 
-<input
-type="text"
-name="address"
-placeholder="العنوان"
-required
->
-<input
-type="text"
-name="unit"
-placeholder="رقم الشقة / رقم الاشتراك"
-required
-
->
-  
-
-
-<select
-name="speed"
-required
->
-
-<option>🧺 نوع الخدمة</option>
+<select name="speed" required>
+<option value="">⚡ نوع الخدمة</option>
 <option>غسيل مستعجل</option>
 <option>كوي مستعجل</option>
 <option>غسيل عادي</option>
 <option>كوي عادي</option>
 </select>
 
- <select
-name="service"
-required
-  
->
-
-<option>🧺 اختر الخدمة</option>
+<select name="service" required>
+<option value="">🧺 اختر الخدمة</option>
 <option>غسيل ملابس</option>
 <option>كي ملابس</option>
 <option>غسيل بطانيات</option>
 <option>غسيل سجاد</option>
 <option>غسيل عبايات</option>
 <option>غسيل ملابس أطفال</option>
-
- </select>
-<select
-name="delivery"
-required
-
->
-
-
-<option>🚚 طريقة الاستلام</option>
-
-<option>استلام من المنزل</option>
-
-<option>تسليم للمغسلة</option>
-
-<option>استلام + توصيل</option>
-
 </select>
 
-<input
-type="date"
-name="date"
-required
+<select name="delivery" required>
+<option value="">🚚 طريقة الاستلام</option>
+<option>استلام من المنزل</option>
+<option>تسليم للمغسلة</option>
+<option>استلام + توصيل</option>
+</select>
 
->
+<input type="date" name="date" required>
 
-
-<input
-type="time"
-name="time"
-required
-
->
-
+<input type="time" name="time" required>
 
 <textarea
 name="message"
@@ -208,8 +144,7 @@ placeholder="تفاصيل إضافية"
 
 <button
 class="whatsapp"
-onclick="sendWhatsApp();setTimeout(successMessage,1000);"
-
+onclick="sendWhatsApp()"
 
 >
 
@@ -223,67 +158,30 @@ id="ok"
 >
 
 <h3>
-
 🧺 تم استلام طلبك بنجاح
-
 </h3>
 
 <p id="order"></p>
 
 <p>
-
-🚚 سوف يتواصل معك مندوب التوصيل قريبًا.
-
+🚚 سوف يتواصل معك مندوب التوصيل قريبًا
 </p>
 
 <p>
-
-📍 يرجى التأكد من صحة العنوان ورقم الجوال.
-
+📍 يرجى التأكد من صحة العنوان ورقم الجوال
 </p>
 
 <hr>
 
-
-<p style="text-align:center;font-size:18px">
-<hr>
-
-<div
-style="
-text-align:center;
-padding:10px;
-line-height:2;
-"
->
-
-<hr>
-
-<div
-style="
-text-align:center;
-padding:15px;
-line-height:2;
-font-size:18px;
-"
->
+<div style="text-align:center">
 
 ✨ شكراً لاختياركم مغاسل لمى الذكية
-
-<br><br>
-
-🧺 تم استلام طلبكم بنجاح
 
 <br><br>
 
 💙 يسعدنا خدمتكم دائماً
 
 </div>
-
-</div>
- ✨
-
-</p>
-
 
 </div>
 
@@ -295,8 +193,6 @@ let orderId="";
 
 function sendWhatsApp(){
 
-if(orderId===""){
-
 orderId=
 "LM-"+
 Math.floor(
@@ -304,14 +200,11 @@ Math.floor(
 Math.random()*9000
 );
 
-}
-
 let text=
 
 `🧺 طلب جديد
 
-📦 رقم الطلب:
-${orderId}
+📦 ${orderId}
 
 👤 ${document.querySelector('[name=name]').value}
 
@@ -320,6 +213,8 @@ ${orderId}
 📍 ${document.querySelector('[name=address]').value}
 
 🏠 ${document.querySelector('[name=unit]').value}
+
+⚡ ${document.querySelector('[name=speed]').value}
 
 🧼 ${document.querySelector('[name=service]').value}
 
@@ -334,18 +229,9 @@ ${orderId}
 window.open(
 "https://wa.me/966534043553?text="
 +
-encodeURIComponent(text)
+encodeURIComponent(text),
+"_blank"
 );
-
-
-setTimeout(
-successMessage,
-500
-);
-
-}
-
-function successMessage(){
 
 document
 .getElementById(
@@ -353,10 +239,7 @@ document
 )
 .innerHTML=
 
-"📦 رقم الطلب: "
-+
-
-orderId;
+"📦 رقم الطلب: "+orderId;
 
 document
 .getElementById(
@@ -368,7 +251,6 @@ document
 }
 
 </script>
-
 
 </body>
 
