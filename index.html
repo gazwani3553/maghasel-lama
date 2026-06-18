@@ -331,11 +331,14 @@ ${orderId}
 
 📝 ${document.querySelector('[name=message]').value}`;
 
-window.open(
+window.location.href=
+
 "https://wa.me/966534043553?text="
-+
-encodeURIComponent(text)
-);
+
+*
+
+encodeURIComponent(text);
+
 
 setTimeout(
 successMessage,
