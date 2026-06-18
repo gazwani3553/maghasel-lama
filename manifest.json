@@ -1,25 +1,15 @@
 {
-"name":"مغاسل لمى الذكية",
-"short_name":"Lama",
-"start_url":"./",
-"display":"standalone",
-"background_color":"#1677ea",
-"theme_color":"#1677ea",
-"orientation":"portrait",
-
-"icons":[
-
+"name": "مغاسل لمى الذكية",
+"short_name": "مغاسل لمى",
+"start_url": "./",
+"display": "standalone",
+"background_color": "#1677ea",
+"theme_color": "#1677ea",
+"icons": [
 {
-
-"src":"logo.png.png",
-
-"sizes":"512x512",
-
-"type":"image/png"
-
+"src": "logo.png.png",
+"sizes": "512x512",
+"type": "image/png"
 }
-
 ]
-
 }
-
