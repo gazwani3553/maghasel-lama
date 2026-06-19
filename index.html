@@ -832,24 +832,79 @@ let text=
 
 📝 ${document.querySelector('[name=message]').value}`;
 
+let confirmOrder=
+
+confirm(
+
+`تأكيد الطلب 🧺
+
+الاسم:
+${document.querySelector('[name=name]').value}
+
+الخدمة:
+${document.querySelector('[name=service]').value}
+
+طريقة الاستلام:
+${document.querySelector('[name=delivery]').value}
+
+التاريخ:
+${document.querySelector('[name=date]').value}
+
+الوقت:
+${document.querySelector('[name=time]').value}
+
+هل تريد إرسال الطلب؟`
+
+);
+
+if(
+
+confirmOrder
+
+){
+
 window.open(
+
 "https://wa.me/966534043553?text="
-+
+
+*
+
 encodeURIComponent(text),
+
 "_blank"
+
 );
 
 document
+
 .getElementById(
+
 "order"
+
 )
+
 .innerHTML=
 
-"📦 رقم الطلب: "+orderId;
+"📦 رقم الطلب: "
+
+*
+
+orderId;
 
 document
+
 .getElementById(
+
 "ok"
+
+)
+
+.style.display=
+
+"block";
+
+}
+
 )
 .style.display=
 "block";
