@@ -14,13 +14,13 @@
  rel="apple-touch-icon"
 href="app-icon.png">
  <link
-rel="stylesheet" 
+rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 >
 
 <style>
 
-body{ 
+body{
 margin:0;
 padding:15px;
 font-family:Arial;
@@ -551,73 +551,43 @@ required
 
 <label>
 
-🧺 الخدمة المطلوبة
+<i
+class="fa-solid fa-shirt"
 
-</label>
-
-<div
 style="
-background:#f8fbff;
-padding:15px;
-border-radius:18px;
+color:#1677ea;
+margin-left:8px;
 "
->
 
-<label>
+> </i>
 
-<input
-type="checkbox"
-name="service"
-value="👕 غسيل ثوب — 8 ر.س"
-
->
-
-👕 غسيل ثوب — 8 ر.س
+الخدمة المطلوبة <span style="color:#ff3b30;">*</span>
 
 </label>
 
-<label>
-
-<input
-type="checkbox"
+<select
 name="service"
-value="👔 كي ثوب — 5 ر.س"
+required
 
 >
 
-👔 كي ثوب — 5 ر.س
+<option value="">
+اختر الخدمة
+</option>
 
-</label>
+<option>غسيل ملابس</option>
 
-<label>
+<option>كي ملابس</option>
 
-<input
-type="checkbox"
-name="service"
-value="🧺 بطانية مفرد — 20 ر.س"
+<option>غسيل بطانيات</option>
 
->
+<option>غسيل سجاد</option>
 
-🧺 بطانية مفرد — 20 ر.س
+<option>غسيل عبايات</option>
 
-</label>
+<option>غسيل ملابس أطفال</option>
 
-<label>
-
-<input
-type="checkbox"
-name="service"
-value="🧕 عباية — 12 ر.س"
-
->
-
-🧕 عباية — 12 ر.س
-
-</label>
-
-</div>
-
-
+</select>
 
 <label>
 
@@ -706,28 +676,10 @@ required
 
 
 <textarea
-
 name="message"
-
-placeholder="✍️ مثال:
-
-ثوب × 2
-
-شماغ × 3
-
-فستان × 1
-
-ملابس أطفال × 3
-
-جزمة × 1"
-
->
-
-</textarea>
-
-
-<button
-
+placeholder="✍️ اكتب ملاحظاتك هنا"
+></textarea>
+ <button
 type="button"
 
 onclick="
@@ -736,9 +688,6 @@ window.open(
 '_blank'
 )
 "
-
->
-
 
 style="
 width:100%;
@@ -1013,19 +962,6 @@ document
 .style.borderColor=
 
 "#ff3b30";
-document
-.querySelector(
-`[name="${field}"]`
-)
-.oninput=
-
-function(){
-
-this.style.borderColor=
-
-"#dbe7ff";
-
-};
 
 alert(
 
