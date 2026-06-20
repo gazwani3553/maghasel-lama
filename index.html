@@ -20,7 +20,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 <style>
 
-body{
+body{ 
 margin:0;
 padding:15px;
 font-family:Arial;
@@ -962,6 +962,19 @@ document
 .style.borderColor=
 
 "#ff3b30";
+document
+.querySelector(
+`[name="${field}"]`
+)
+.oninput=
+
+function(){
+
+this.style.borderColor=
+
+"#dbe7ff";
+
+};
 
 alert(
 
