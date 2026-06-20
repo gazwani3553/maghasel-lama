@@ -801,6 +801,60 @@ id="ok"
 let orderId="";
 
 function sendWhatsApp(){
+let requiredFields=[
+
+'name',
+
+'phone',
+
+'address',
+
+'unit',
+
+'speed',
+
+'service',
+
+'delivery',
+
+'date',
+
+'time'
+
+];
+
+for(
+
+let field of requiredFields
+
+){
+
+let value=
+
+document
+.querySelector(
+`[name="${field}"]`
+)
+.value
+.trim();
+
+if(
+
+!value
+
+){
+
+alert(
+
+"⚠️ يرجى تعبئة جميع الحقول قبل إرسال الطلب"
+
+);
+
+return;
+
+}
+
+}
 
 orderId=
 "LM-"+
