@@ -412,8 +412,6 @@ required
 
 <label>
 
-<label>
-
 <i
 class="fa-solid fa-location-dot"
 
@@ -425,21 +423,12 @@ margin-left:8px;
 > </i>
 
 العنوان
-
-</label>
-
+<label>
 <input
-
 type="text"
-
 name="address"
-
 placeholder="اكتب العنوان"
-
 required
-
->
-
 <button
 
 type="button"
@@ -450,7 +439,7 @@ style="
 
 width:100%;
 
-height:52px;
+height:58px;
 
 margin-top:8px;
 
@@ -468,7 +457,7 @@ border:none;
 
 border-radius:16px;
 
-font-size:16px;
+font-size:18px;
 
 font-weight:bold;
 
@@ -477,8 +466,6 @@ font-weight:bold;
 >
 
 📍 تحديد موقعي الحالي
-
-</button>
 
 </button>
 
@@ -873,14 +860,13 @@ let lng=
 
 position.coords.longitude;
 
-nt
+document
 .querySelector(
 '[name=address]'
 )
 .value=
 
-`https://www.google.com/maps?q=${lat},${lng}`;
-;
+`https://maps.google.com/?q=${lat},${lng}`;
 
 },
 
