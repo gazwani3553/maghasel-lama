@@ -628,6 +628,64 @@ name="service2"
 
 <select
 name="service_type2"
+<button
+
+type="button"
+
+id="addItem"
+
+style="
+background:#1677ea;
+color:white;
+margin-top:8px;
+height:55px;
+"
+
+>
+
+➕ إضافة الصنف
+
+</button>
+
+<div
+
+id="cart"
+
+style="
+margin-top:15px;
+padding:15px;
+background:#f8fbff;
+border-radius:16px;
+display:none;
+"
+
+>
+
+<h3>
+
+🛒 طلبي
+
+</h3>
+
+<div id="items"></div>
+
+<br>
+
+<b>
+
+الإجمالي:
+
+<span id="total">
+
+0
+
+</span>
+
+ر.س
+
+</b>
+
+</div>
 
 >
 
@@ -1105,6 +1163,61 @@ alert(
 );
 
 }
+
+}
+let total=0;
+
+document
+.getElementById(
+"addItem"
+)
+
+.onclick=
+
+function(){
+
+let item=
+
+document
+.querySelector(
+'[name=service]'
+)
+.value;
+
+if(
+
+!item
+
+){
+
+alert(
+"اختر الصنف أولاً"
+);
+
+return;
+
+}
+
+document
+.getElementById(
+"cart"
+)
+.style.display=
+
+"block";
+
+document
+.getElementById(
+"items"
+)
+.innerHTML
+
++=
+
+"<div>🧺 "
++
+item+
+"</div>";
 
 }
 
