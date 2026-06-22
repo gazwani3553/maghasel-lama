@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl"> 
 
 <head>
 <meta charset="UTF-8">
@@ -636,6 +636,51 @@ required
 type="number"
 
 name="qty"
+<button
+
+type="button"
+
+id="addItem"
+
+style="
+background:#1677ea;
+color:white;
+margin-top:10px;
+"
+
+>
+
+➕ إضافة للطلب
+
+</button>
+
+<div
+
+id="cart"
+
+style="
+display:none;
+
+margin-top:15px;
+
+padding:15px;
+
+background:#f8fbff;
+
+border-radius:18px;
+"
+
+>
+
+<h3>
+
+🛒 طلبي
+
+</h3>
+
+<div id="items"></div>
+
+</div>
 
 value="1"
 
@@ -940,6 +985,80 @@ id="ok"
 <script>
 
 let orderId="";
+ let orders=[];
+
+document
+.getElementById(
+"addItem"
+)
+
+.onclick=
+
+function(){
+
+let item=
+
+document
+.querySelector(
+'[name=service]'
+)
+.value;
+
+let qty=
+
+document
+.querySelector(
+'[name=qty]'
+)
+.value;
+
+if(
+
+!item
+
+){
+
+alert(
+"اختر الصنف"
+);
+
+return;
+
+}
+
+orders.push(
+
+item+
+
+" × "+
+
+qty
+
+);
+
+document
+.getElementById(
+"cart"
+)
+.style.display=
+
+"block";
+
+document
+.getElementById(
+"items"
+)
+.innerHTML=
+
+orders
+.map(
+x=>
+"<div>"+x+"</div>"
+)
+.join("");
+
+};
+
 function getLocation(){
 
 if(
