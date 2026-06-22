@@ -1144,7 +1144,7 @@ else{
 
 alert(
 
-"⚠️ الجهاز لا يدعم الموقع"
+"⚠️ الجهاز لا يدعم الموقع" 
 
 );
 
@@ -1258,35 +1258,7 @@ Math.floor(
 1000+
 Math.random()*9000
 );
-let selectedItems="";
 
-if(
-
-orders.length>0
-
-){
-
-selectedItems=
-
-orders.join("\n");
-
-}
-
-else{
-
-selectedItems=
-
-document
-.querySelector(
-'[name=service]'
-)
-.value
-
-*
-
-" × "
-
-*
 
 document
 .querySelector(
@@ -1313,30 +1285,7 @@ let text=
 ⚡ ${document.querySelector('[name=speed]').value}
 🧺 الأصناف:
 
-${
-orders.length>0
-
-?
-
-orders.join("\n")
-
-:
-
-document.querySelector(
-'[name=service]'
-).value
-
-*
-
-" × "
-
-*
-
-document.querySelector(
-'[name=qty]'
-).value
-}
-
+${orders.join("\n")}
 
 🚚 ${document.querySelector('[name=delivery]').value}
 
@@ -1355,22 +1304,7 @@ if(
 
 🧺
 
-${
-
-orders.length>0
-
-?
-
-orders.join("\n")
-
-:
-
-document.querySelector(
-'[name=service]'
-).value
-
-}
-
+${orders.join("\n")}
 
 🚚 ${document.querySelector('[name=delivery]').value}
 
