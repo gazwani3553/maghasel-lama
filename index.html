@@ -1091,6 +1091,13 @@ document
 '[name=speed]'
 )
 .value;
+let service=
+
+document
+.querySelector(
+'[name=speed]'
+)
+.value;
 
 let price=0;
 
@@ -1098,19 +1105,19 @@ if(
 item==="ثوب"
 ){
 
-price=
-
+if(
 service.includes(
 "غسيل"
 )
+)
+price=8;
 
-?
-
-8
-
-:
-
-6;
+if(
+service.includes(
+"كوي"
+)
+)
+price=6;
 
 }
 
@@ -1118,19 +1125,19 @@ if(
 item==="شماغ"
 ){
 
-price=
-
+if(
 service.includes(
 "غسيل"
 )
+)
+price=5;
 
-?
-
-5
-
-:
-
-4;
+if(
+service.includes(
+"كوي"
+)
+)
+price=4;
 
 }
 
@@ -1138,19 +1145,19 @@ if(
 item==="فستان"
 ){
 
-price=
-
+if(
 service.includes(
 "غسيل"
 )
+)
+price=18;
 
-?
-
-18
-
-:
-
-12;
+if(
+service.includes(
+"كوي"
+)
+)
+price=12;
 
 }
 
@@ -1164,16 +1171,12 @@ qty+
 
 " — "+
 
-(
-price*
-qty
-)
-
-*
+(price*Number(qty))+
 
 " ريال"
 
 );
+
 
 document
 .getElementById(
