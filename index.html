@@ -12,7 +12,7 @@
 <meta name="theme-color" content="#1677ea"> 
 <link
  rel="apple-touch-icon"
-href="app-icon.png"> 
+href="app-icon.png">  
  <link
 rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
@@ -1021,30 +1021,45 @@ id="ok"
 const prices={
 
 "ثوب":{
-"غسيل":8,
-"كوي":6,
-"غسيل + كوي":12
+
+"غسيل عادي":8,
+
+"غسيل مستعجل":12,
+
+"كوي عادي":6,
+
+"كوي مستعجل":9
+
 },
 
 "شماغ":{
-"غسيل":5,
-"كوي":4,
-"غسيل + كوي":8
+
+"غسيل عادي":5,
+
+"غسيل مستعجل":8,
+
+"كوي عادي":4,
+
+"كوي مستعجل":6
+
 },
 
 "فستان":{
-"غسيل":18,
-"كوي":10,
-"غسيل + كوي":20
+
+"غسيل عادي":18,
+
+"غسيل مستعجل":25,
+
+"كوي عادي":12,
+
+"كوي مستعجل":18
+
 }
 
 };
-
 let orderId="";
 
 let orders=[];
-
-
 document
 .getElementById(
 "addItem"
@@ -1093,21 +1108,17 @@ document
 .value;
 
 
-let serviceType=
+let price=
 
-service.includes(
-"غسيل"
-)
+prices[item]
 
 ?
 
-"غسيل"
+prices[item][service]
 
 :
 
-"كوي";
-
-let price=
+0;
 
 prices[item]
 
