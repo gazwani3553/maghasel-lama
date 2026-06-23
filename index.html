@@ -1210,6 +1210,27 @@ index,
 1
 );
 
+if(
+orders.length===0
+){
+
+document
+.getElementById(
+"cart"
+)
+.style.display=
+"none";
+
+document
+.getElementById(
+"items"
+)
+.innerHTML="";
+
+return;
+
+}
+
 document
 .getElementById(
 "items"
@@ -1226,32 +1247,13 @@ orders
 
 "<span>"+x+"</span>" +
 
-"<span onclick='removeItem("+i+")'
-
-style='cursor:pointer;color:#ff3b30;font-size:20px'>
-
-🗑️
-
-</span>" +
+"<span onclick='removeItem("+i+")' style='cursor:pointer;color:#ff3b30;font-size:20px'>🗑️</span>" +
 
 "</div>"
 
 )
 
 .join("");
-
-if(
-orders.length===0
-){
-
-document
-.getElementById(
-"cart"
-)
-.style.display=
-"none";
-
-}
 
 }
 
