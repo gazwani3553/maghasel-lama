@@ -1169,13 +1169,26 @@ orders
 
 .map(
 
-(x)=>
+(x,i)=>
 
-"<div>"+x+"</div>"
+"<div style='display:flex;justify-content:space-between;align-items:center;margin-bottom:10px'>" +
+
+"<span>"+x+"</span>" +
+
+"<span onclick='removeItem("+i+")'
+
+style='cursor:pointer;color:#ff3b30;font-size:20px'>
+
+🗑️
+
+</span>" +
+
+"</div>"
 
 )
 
 .join("");
+
 document
 .querySelector(
 '[name=service]'
@@ -1190,6 +1203,57 @@ document
 
 };
 
+function removeItem(index){
+
+orders.splice(
+index,
+1
+);
+
+document
+.getElementById(
+"items"
+)
+.innerHTML=
+
+orders
+
+.map(
+
+(x,i)=>
+
+"<div style='display:flex;justify-content:space-between;align-items:center;margin-bottom:10px'>" +
+
+"<span>"+x+"</span>" +
+
+"<span onclick='removeItem("+i+")'
+
+style='cursor:pointer;color:#ff3b30;font-size:20px'>
+
+🗑️
+
+</span>" +
+
+"</div>"
+
+)
+
+.join("");
+
+if(
+orders.length===0
+){
+
+document
+.getElementById(
+"cart"
+)
+.style.display=
+"none";
+
+}
+
+}
 
 function getLocation(){
 
