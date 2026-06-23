@@ -1084,13 +1084,94 @@ return;
 
 }
 
+let service=
+
+document
+.querySelector(
+'[name=speed]'
+)
+.value;
+
+let price=0;
+
+if(
+item==="ثوب"
+){
+
+price=
+
+service.includes(
+"غسيل"
+)
+
+?
+
+8
+
+:
+
+6;
+
+}
+
+if(
+item==="شماغ"
+){
+
+price=
+
+service.includes(
+"غسيل"
+)
+
+?
+
+5
+
+:
+
+4;
+
+}
+
+if(
+item==="فستان"
+){
+
+price=
+
+service.includes(
+"غسيل"
+)
+
+?
+
+18
+
+:
+
+12;
+
+}
+
 orders.push(
 
 item+
 
 " × "+
 
+qty+
+
+" — "+
+
+(
+price*
 qty
+)
+
+*
+
+" ريال"
 
 );
 
