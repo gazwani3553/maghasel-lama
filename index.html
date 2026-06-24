@@ -18,7 +18,7 @@ rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 > 
 
-<style> 
+<style>  
  
 body{
 margin:0;
@@ -1092,7 +1092,9 @@ document
 .querySelector(
 '[name=speed]'
 )
-.value;
+.value
+.trim();
+
 
 if(
 
@@ -1124,15 +1126,15 @@ return;
 
 let price=
 
-prices[item]
+Number(
 
-?
+prices[item]?.[service]
 
-prices[item][service]
+||
 
-:
+0
 
-0;
+);
 
 
 orders.push(
