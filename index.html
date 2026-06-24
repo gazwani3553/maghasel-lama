@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8"> 
 <meta name="viewport" content="width=device-width,initial-scale=1">    
- 
+  
 <title>مغاسل لمى الذكية</title>    
 
 <link rel="icon" href="logo.png">
@@ -1267,6 +1267,47 @@ document
 sum+
 
 " ريال";
+ let qtyTotal=0;
+
+orders.forEach(
+
+row=>{
+
+let match=
+
+row.match(
+
+/×\s*(\d+)/
+
+);
+
+if(
+
+match
+
+){
+
+qtyTotal+=
+Number(
+match[1]
+);
+
+}
+
+}
+
+);
+
+document
+.getElementById(
+"qtyTotal"
+)
+.innerHTML=
+
+"🧺 عدد القطع: "+
+
+qtyTotal;
+ 
 document
 .getElementById( 
 "items"
