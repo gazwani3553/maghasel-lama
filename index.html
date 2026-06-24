@@ -1245,7 +1245,7 @@ match[1]
 document
 .getElementById(
 "total"
-)
+) 
 .innerHTML=
 
 "💰 الإجمالي: "+
@@ -1254,7 +1254,7 @@ sum+
 
 " ريال";
 document
-.getElementById(
+.getElementById( 
 "items"
 )
 .innerHTML=
@@ -1578,6 +1578,14 @@ let text=
 🧺 الأصناف:
 
 ${orders.join("\n")}
+
+💰 ${
+document
+.getElementById(
+"total"
+)
+.innerText
+}
 
 🚚 ${document.querySelector('[name=delivery]').value}
 
