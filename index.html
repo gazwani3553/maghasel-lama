@@ -4,7 +4,7 @@
 
 <head>
 <meta charset="UTF-8"> 
-<meta name="viewport" content="width=device-width,initial-scale=1"> 
+<meta name="viewport" content="width=device-width,initial-scale=1">  
  
 <title>مغاسل لمى الذكية</title>   
 
@@ -1105,25 +1105,51 @@ orders.forEach(
 
 row=>{
 
-let match=
+if(
 
-row.match(
+row.includes(
+"ريال"
+)
 
-/—\s*(\d+)\s*ريال/
+){
 
-);
+let price=
+
+row.split(
+"—"
+)[1];
 
 if(
 
-match
+price
+
+){
+
+price=
+
+price
+.replace(
+"ريال",
+""
+)
+.trim();
+
+if(
+
+!isNaN(
+price
+)
 
 ){
 
 sum+=
-
 Number(
-match[1]
+price
 );
+
+}
+
+}
 
 }
 
