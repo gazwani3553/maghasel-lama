@@ -9,7 +9,7 @@
 <title>مغاسل لمى الذكية</title>   
 
 <link rel="icon" href="logo.png">
-<meta name="theme-color" content="#1677ea"> 
+<meta name="theme-color" content="#1677ea">  
 <link 
  rel="apple-touch-icon"  
 href="app-icon.png">   
@@ -1279,7 +1279,46 @@ document
 .style.display=
 
 "block";
+let sum=0;
 
+orders.forEach(
+
+row=>{
+
+let match=
+
+row.match(
+
+/—\s*(\d+)\sريال/
+
+);
+
+if(
+match
+){
+
+sum+=
+Number(
+match[1]
+);
+
+}
+
+}
+
+);
+
+document
+.getElementById(
+"total"
+)
+.innerHTML=
+
+"💰 الإجمالي: "+
+
+sum+
+
+" ريال";
 document
 .getElementById(
 "items"
