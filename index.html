@@ -6,7 +6,7 @@
 <meta charset="UTF-8"> 
 <meta name="viewport" content="width=device-width,initial-scale=1"> 
  
-<title>مغاسل لمى الذكية</title>  
+<title>مغاسل لمى الذكية</title>   
 
 <link rel="icon" href="logo.png">
 <meta name="theme-color" content="#1677ea"> 
@@ -1109,7 +1109,7 @@ let match=
 
 row.match(
 
-/(\d+)/g
+/—\s*(\d+)\s*ريال/
 
 );
 
@@ -1119,27 +1119,11 @@ match
 
 ){
 
-let value=
+sum+=
 
 Number(
-
-match[
-match.length-1
-]
-
+match[1]
 );
-
-if(
-
-!isNaN(
-value
-)
-
-){
-
-sum+=value;
-
-}
 
 }
 
