@@ -11,7 +11,7 @@
 <link rel="icon" href="logo.png">
 <meta name="theme-color" content="#1677ea">  
 <link 
- rel="apple-touch-icon"  
+ rel="apple-touch-icon"   
 href="app-icon.png">   
  <link
 rel="stylesheet"
@@ -1099,75 +1099,7 @@ document
 '[name=qty]'
 )
 .value;
-let sum=0;
 
-orders.forEach(
-
-row=>{
-
-if(
-
-row.includes(
-"ريال"
-)
-
-){
-
-let price=
-
-row.split(
-"—"
-)[1];
-
-if(
-
-price
-
-){
-
-price=
-
-price
-.replace(
-"ريال",
-""
-)
-.trim();
-
-if(
-
-!isNaN(
-price
-)
-
-){
-
-sum+=
-Number(
-price
-);
-
-}
-
-}
-
-}
-
-}
-
-);
-
-document
-.getElementById(
-"total"
-)
-.innerHTML=
-
-"💰 الإجمالي: "+
-
-sum+
-
-" ريال";
 let service=
 
 document
@@ -1289,12 +1221,14 @@ let match=
 
 row.match(
 
-/—\s*(\d+)\sريال/
+/—\s*(\d+)\s*ريال/
 
 );
 
 if(
+
 match
+
 ){
 
 sum+=
