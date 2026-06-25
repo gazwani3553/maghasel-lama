@@ -4,7 +4,7 @@
 
 <head>
 <meta charset="UTF-8">    
-<meta name="viewport" content="width=device-width,initial-scale=1">           
+<meta name="viewport" content="width=device-width,initial-scale=1">            
    
 <title>مغاسل لمى الذكية</title>    
  
@@ -1758,11 +1758,11 @@ document
 
 <div
 style="
-background:#f7fbff;
+background:#f6f9ff;
 border-radius:28px;
 overflow:hidden;
 box-shadow:0 12px 40px rgba(0,0,0,.08);
-font-family:sans-serif;
+direction:rtl;
 "
 
 >
@@ -1772,32 +1772,55 @@ style="
 background:
 linear-gradient(
 135deg,
-#1677ea,
+#0f67e8,
 #2f73ff
 );
 
+padding:26px;
+
 color:white;
-
-padding:28px;
-
-text-align:center;
 "
 
 >
 
 <div
 style="
-font-size:42px;
+display:flex;
+align-items:center;
+gap:15px;
 "
+
+>
+
+<div
+style="
+width:80px;
+height:80px;
+
+background:white;
+
+border-radius:50%;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:38px;
+"
+
 >
 
 🧺
 
 </div>
 
+<div>
+
 <div
 style="
-font-size:28px;
+font-size:34px;
 font-weight:bold;
 "
 >
@@ -1811,6 +1834,7 @@ style="
 margin-top:8px;
 opacity:.9;
 "
+
 >
 
 نغسل باحتراف .. نعيدها لك أجمل ✨
@@ -1819,117 +1843,167 @@ opacity:.9;
 
 </div>
 
-<div
-style="
-padding:20px;
-"
+</div>
 
->
+</div>
+
+<div style="padding:18px">
 
 <div
 style="
 background:white;
 
-padding:18px;
+border-radius:20px;
 
-border-radius:18px;
+padding:16px;
 
-margin-bottom:16px;
+display:grid;
+
+grid-template-columns:
+1fr 1fr;
+
+gap:12px;
 "
 
 >
 
-📦 رقم الطلب:
-<b>
-${orderId||"جديد"}
-</b>
+<div>
+📦<br>
+<b>${orderId||"جديد"}</b>
+</div>
 
-<br><br>
-
-📅
+<div>
+📅<br>
 ${document.querySelector('[name=date]').value}
+</div>
 
-—
-
-⏰
+<div>
+⏰<br>
 ${document.querySelector('[name=time]').value}
-
 </div>
 
-<div
-style="
-background:white;
-
-padding:18px;
-
-border-radius:18px;
-
-margin-bottom:16px;
-
-line-height:2;
-"
-
->
-
-👤
-${document.querySelector('[name=name]').value}
-
-<br>
-
-📱
-${document.querySelector('[name=phone]').value}
-
-<br>
-
-📍
-${document.querySelector('[name=address]').value}
-
-<br>
-
-⚡
+<div>
+⚡<br>
 ${document.querySelector('[name=speed]').value}
+</div>
 
 </div>
+
+<br>
 
 <div
 style="
 background:white;
 
-padding:18px;
+border-radius:20px;
 
-border-radius:18px;
-
-margin-bottom:16px;
+overflow:hidden;
 "
 
 >
 
-<h3>
+<div
+style="
+padding:16px;
+
+font-size:24px;
+
+font-weight:bold;
+
+text-align:center;
+
+color:#1677ea;
+"
+
+>
+
+👤 بيانات العميل
+
+</div>
+
+<table
+style="
+width:100%;
+
+border-collapse:collapse;
+"
+
+>
+
+<tr>
+<td style="padding:14px">الاسم</td>
+<td>${document.querySelector('[name=name]').value}</td>
+</tr>
+
+<tr>
+<td style="padding:14px">الجوال</td>
+<td>${document.querySelector('[name=phone]').value}</td>
+</tr>
+
+<tr>
+<td style="padding:14px">العنوان</td>
+<td>${document.querySelector('[name=address]').value}</td>
+</tr>
+
+</table>
+
+</div>
+
+<br>
+
+<div
+style="
+background:white;
+
+border-radius:20px;
+
+padding:18px;
+"
+
+>
+
+<div
+style="
+text-align:center;
+
+font-size:24px;
+
+font-weight:bold;
+
+color:#1677ea;
+"
+
+>
 
 🧺 قائمة الأصناف
 
-</h3>
+</div>
 
-${orders.join("<br>")}
+<br>
+
+${orders.join("<br><br>")}
 
 </div>
 
+<br>
+
 <div
 style="
-display:flex;
+display:grid;
 
-gap:10px;
+grid-template-columns:
+1fr 1fr;
+
+gap:12px;
 "
 
 >
 
 <div
 style="
-flex:1;
+background:#eef5ff;
 
-background:#fff;
-
-padding:16px;
+padding:18px;
 
 border-radius:18px;
 
@@ -1944,19 +2018,19 @@ ${document.getElementById("qtyTotal").innerHTML}
 
 <div
 style="
-flex:1;
+background:#e8fff0;
 
-background:#e9fff1;
-
-padding:16px;
+padding:18px;
 
 border-radius:18px;
 
 text-align:center;
 
-font-weight:bold;
+font-size:24px;
 
 color:#16a34a;
+
+font-weight:bold;
 "
 
 >
@@ -1971,16 +2045,18 @@ ${document.getElementById("total").innerHTML}
 
 <div
 style="
-background:#fff7ed;
+background:#fff8eb;
 
-padding:16px;
+padding:18px;
 
-border-radius:18px;
+border-radius:20px;
 "
 
 >
 
 📝
+
+<br><br>
 
 ${document.querySelector('[name=message]').value||
 
@@ -1999,13 +2075,13 @@ linear-gradient(
 #2f73ff
 );
 
+padding:22px;
+
 color:white;
 
-padding:20px;
-
-border-radius:20px;
-
 text-align:center;
+
+border-radius:22px;
 "
 
 >
@@ -2023,7 +2099,7 @@ text-align:center;
 </div>
 
 `;
-
+      
 }
 
 
