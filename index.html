@@ -4,7 +4,7 @@
 
 <head>
 <meta charset="UTF-8">   
-<meta name="viewport" content="width=device-width,initial-scale=1">       
+<meta name="viewport" content="width=device-width,initial-scale=1">        
   
 <title>مغاسل لمى الذكية</title>    
  
@@ -1184,6 +1184,109 @@ item==="أخرى"
 price*
 qty;
 
+let existing=
+
+orders.findIndex(
+
+row=>
+
+row.includes(
+"⚡ "+service
+)
+
+&&
+
+row.includes(
+"🧺 "+item
+)
+
+);
+
+if(
+
+existing!==-1
+
+){
+
+let oldQty=
+
+Number(
+
+orders[
+existing
+]
+
+.match(
+
+/×\s*(\d+)/
+
+)?.[1]
+
+||
+
+0
+
+);
+
+let newQty=
+
+oldQty+
+
+Number(
+qty
+);
+
+let newTotal=
+
+item==="أخرى"
+
+?
+
+"يتم تحديد السعر بعد الفرز"
+
+:
+
+price*
+newQty;
+
+orders[
+existing
+]=
+
+"⚡ "+
+
+service+
+
+" | 🧺 "+
+
+item+
+
+" × "+
+
+newQty+
+
+" — "+
+
+newTotal+
+
+(
+
+item==="أخرى"
+
+?
+
+""
+
+:
+
+" ريال"
+
+);
+
+}
+
+else{
+
 orders.push(
 
 "⚡ "+
@@ -1215,8 +1318,10 @@ item==="أخرى"
 " ريال"
 
 )
+
 );
 
+}
 
 document
 .getElementById(
