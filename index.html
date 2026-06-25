@@ -4,7 +4,7 @@
 
 <head>
 <meta charset="UTF-8">    
-<meta name="viewport" content="width=device-width,initial-scale=1">            
+<meta name="viewport" content="width=device-width,initial-scale=1">             
    
 <title>مغاسل لمى الذكية</title>    
  
@@ -1981,7 +1981,184 @@ color:#1677ea;
 
 <br>
 
-${orders.join("<br><br>")}
+<table
+style="
+width:100%;
+
+border-collapse:separate;
+
+border-spacing:0;
+
+overflow:hidden;
+
+border-radius:18px;
+
+background:white;
+
+box-shadow:
+0 4px 18px rgba(0,0,0,.05);
+"
+>
+
+<tr
+style="
+background:
+linear-gradient(
+135deg,
+#1677ea,
+#2f73ff
+);
+
+color:white;
+"
+
+>
+
+<th
+style="
+padding:18px;
+
+font-size:18px;
+"
+>
+م
+</th>
+
+<th style="padding:18px;
+font-size:18px;">الصنف</th>
+
+<th style="padding:18px;
+font-size:18px;">عدد القطع</th>
+
+<th style="padding:18px;
+font-size:18px;">السعر</th>
+
+</tr>
+
+${
+orders
+.map(
+(
+row,
+i
+)=>
+`
+
+<tr
+style="
+background:
+${i%2?"#ffffff":"#f8fbff"};
+"
+
+>
+
+<td
+style="
+padding:16px;
+
+text-align:center;
+
+font-weight:bold;
+
+color:#1677ea;
+
+border-bottom:
+1px solid #eef3ff;
+"
+>
+
+${i+1}
+
+</td>
+
+<td
+style="
+padding:16px;
+
+font-weight:600;
+
+border-bottom:
+1px solid #eef3ff;
+"
+>
+
+${row
+.replace(
+/⚡.*?\|\s*🧺\s*/,
+""
+)
+.replace(
+/—.*/,
+""
+)
+}
+
+</td>
+
+<td
+style="
+text-align:center;
+
+font-size:18px;
+
+border-bottom:
+1px solid #eef3ff;
+"
+>
+
+${
+row
+.match(
+/×\s*(\d+)/
+)
+?.[1]
+
+||
+
+1
+}
+
+</td>
+
+<td
+style="
+text-align:center;
+
+font-size:20px;
+
+color:#16a34a;
+
+font-weight:700;
+
+border-bottom:
+1px solid #eef3ff;
+"
+>
+
+${
+row
+.match(
+/—\s*(.*)/
+)
+?.[1]
+
+||
+
+"-"
+}
+
+</td>
+
+</tr>
+
+`
+)
+
+.join("")
+
+}
+
+</table>
 
 </div>
 
