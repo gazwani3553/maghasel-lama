@@ -1583,20 +1583,14 @@ orders
 
 .join("");
 
-
-let serviceField=
-
-document.querySelector(
+document
+.querySelector(
 '[name=service]'
-);
+)
 
-if(
+.addEventListener(
 
-serviceField
-
-){
-
-serviceField.onchange=
+"change",
 
 function(){
 
@@ -1615,7 +1609,11 @@ box
 box.style.display=
 
 this.value
-==="شماغ"
+.trim()
+
+===
+
+"شماغ"
 
 ?
 
@@ -1627,9 +1625,10 @@ this.value
 
 }
 
-};
-
 }
+
+);
+
 function removeItem(index){
 
 orders.splice(
