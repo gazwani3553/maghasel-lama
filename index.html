@@ -1853,8 +1853,32 @@ let today=
 
 now
 
-.toLocaleDateString(
-'en-CA'
+.getFullYear()
+
++
+
+"-"+
+
+String(
+now.getMonth()+1
+)
+
+.padStart(
+2,
+"0"
+)
+
++
+
+"-"+
+
+String(
+now.getDate()
+)
+
+.padStart(
+2,
+"0"
 );
 
 let currentTime=
@@ -1883,7 +1907,11 @@ now.getMinutes()
 
 if(
 
-selectedDate===today
+selectedDate
+
+===
+
+today
 
 &&
 
@@ -1900,16 +1928,15 @@ alert(
 "⏰ لا يمكن اختيار وقت سابق للوقت الحالي"
 
 );
-
 document
 .querySelector(
 '[name=time]'
 )
 .focus();
-
 return;
 
 }
+
 orderId=
 "LM-"+
 Math.floor(
