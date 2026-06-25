@@ -4,7 +4,7 @@
 
 <head>
 <meta charset="UTF-8">    
-<meta name="viewport" content="width=device-width,initial-scale=1">        
+<meta name="viewport" content="width=device-width,initial-scale=1">         
   
 <title>مغاسل لمى الذكية</title>    
  
@@ -1658,35 +1658,6 @@ alert(
 }
 
 }
-let today=
-
-new Date();
-
-today.setMinutes(
-
-today.getMinutes()
-
--
-
-today.getTimezoneOffset()
-
-);
-
-document
-.getElementById(
-"pickupDate"
-)
-.min=
-
-today
-
-.toISOString()
-
-.split(
-"T"
-)
-
-[0];
 function sendWhatsApp(){
  if(
 
@@ -1811,6 +1782,47 @@ alert(
 document
 .querySelector(
 '[name=phone]'
+)
+.focus();
+
+return;
+
+}
+  let selectedDate=
+
+document
+.querySelector(
+'[name=date]'
+)
+.value;
+
+let today=
+
+new Date()
+
+.toLocaleDateString(
+'en-CA'
+);
+
+if(
+
+selectedDate
+
+<
+
+today
+
+){
+
+alert(
+
+"📅 لا يمكن اختيار تاريخ سابق"
+
+);
+
+document
+.querySelector(
+'[name=date]'
 )
 .focus();
 
